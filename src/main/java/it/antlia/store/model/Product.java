@@ -12,4 +12,17 @@ public abstract class Product {
     Product() {
         this.id = ++staticID;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Product) {
+            return id == ((Product) obj).id;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
 }

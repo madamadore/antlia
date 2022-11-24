@@ -14,19 +14,7 @@ public class Book extends Product {
     private int numberOfPages;
     private String ibnCode;
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof Book) {
-            Book other = (Book) obj;
-            return ibnCode.equals(other.ibnCode);
-        }
-        return false;
-    }
-
-    @Override
-    public int hashCode() {
-        return ibnCode.hashCode();
-    }
+    
 
     @Override
     public String toString() {
