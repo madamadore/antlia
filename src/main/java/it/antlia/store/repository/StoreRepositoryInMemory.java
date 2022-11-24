@@ -1,6 +1,7 @@
 package it.antlia.store.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
@@ -27,7 +28,11 @@ public class StoreRepositoryInMemory implements TShirtRepository {
 
     @Override
     public TShirt get(int id) {
-        return magazzino.get(id - 1);
+        return magazzino
+                    .stream()
+                    .filter(shirt->{ return shirt.getId() == id; })
+                    .findFirst()
+                    .orElse(null);
     }
 
     @Override

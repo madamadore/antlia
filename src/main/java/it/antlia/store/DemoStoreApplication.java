@@ -1,6 +1,7 @@
 package it.antlia.store;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -48,16 +50,26 @@ public class DemoStoreApplication implements CommandLineRunner {
 		
 		Book newBook = books.get(2);
 
+		List<String> cities = Arrays.asList(new String[] { "Milano", "Roma", "Napoli" });
+		List<String> capoluoghi = new ArrayList<String>() {{
+			add("Milano");
+			add("Roma");
+			add("Napoli");
+		}};
+		List<String> capo = Stream.of("Milano", "Roma", "Napoli")
+							.collect(Collectors.toList());
+							
 		// List<String> titoli = new ArrayList<>();
 		// for (int i=0; i<books.size(); i++) {
 		// 	String titolo = books.get(i).getTitle();
 		// 	titoli.add(titolo);
 		// }
 
+		
+
 		List<String> titoli = books
-								.stream()
-								.map(b -> b.getTitle())
-								//.map(Book::getTitle)
+								.map(Book::getTitle)
+								.filter()
 								.collect(Collectors.toList());
 
 	List<String> titoli = books
