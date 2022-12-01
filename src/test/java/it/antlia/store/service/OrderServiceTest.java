@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.ContextConfiguration;
@@ -23,12 +24,15 @@ import it.antlia.store.model.Book;
 import it.antlia.store.model.Order;
 import it.antlia.store.model.Product;
 import it.antlia.store.model.TShirt;
+import it.antlia.store.repository.OrderRepository;
 
 @RunWith(SpringRunner.class)
-@DataJpaTest
-@EnableJpaRepositories(basePackages = "it.antlia.store", entityManagerFactoryRef = "emf")
+@SpringBootTest
 @ContextConfiguration(classes= { OrderServiceImpl.class })
 public class OrderServiceTest {
+    
+    @MockBean
+    OrderRepository orderRepository;
     
     @Autowired
     private OrderService orderService;
