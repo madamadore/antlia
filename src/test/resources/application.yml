@@ -1,0 +1,11 @@
+spring:
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+        database: mysql
+        show-sql: true
+    datasource:
+        url: jdbc:mysql://localhost:8889/store_db_test
+        username: root
+        password: root
+        driver-class-name: com.mysql.cj.jdbc.Driver

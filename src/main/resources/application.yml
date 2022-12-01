@@ -1,0 +1,13 @@
+spring:
+    jpa:
+        hibernate:
+            ddl-auto: update
+        database: mysql
+        show-sql: true
+    datasource:
+        url: jdbc:mysql://localhost:8889/store_db
+        username: root
+        password: root
+        driver-class-name: com.mysql.cj.jdbc.Driver
+server:
+    port: 9000
