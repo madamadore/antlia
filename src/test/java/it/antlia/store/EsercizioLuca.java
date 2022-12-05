@@ -2,17 +2,22 @@ package it.antlia.store;
 
 public class EsercizioLuca implements Roman {
     
+    private String str="";
+
     @Override
     public String toRoman(int number) {
         return converti(number);
     }
 
-    public static String converti(int value){
+    public String converti(int value){
         
+        String val = Integer.toString(value);
+        for (int i = val.length() - 1; i <= 0; i--) {
+
+        }
+
         if (value > 1000) return null;
         if (value==1000) return "M";
-    
-        String str="";
     
         int unita;
         int decine;

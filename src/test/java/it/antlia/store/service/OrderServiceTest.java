@@ -28,7 +28,7 @@ import it.antlia.store.repository.OrderRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@ContextConfiguration(classes= { OrderServiceImpl.class })
+@ContextConfiguration(classes = { OrderServiceImpl.class })
 public class OrderServiceTest {
     
     @MockBean

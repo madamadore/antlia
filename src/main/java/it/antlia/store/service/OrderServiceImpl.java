@@ -1,5 +1,7 @@
 package it.antlia.store.service;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,5 +38,14 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void save(Order o) {
         repo.save(o);
+    }
+
+    @Override
+    public void leggiFile() throws IOException {
+        FileReader io = new FileReader("C:\\cartella\\file.jpg");
+        while (io.read() > 0) {
+            
+        }
+        io.close();
     }
 }
